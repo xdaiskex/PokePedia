@@ -110,6 +110,12 @@ hr{
     border: 2px solid white !important;
 }
 
+#image{
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 770px){
     .nav li a{
         box-shadow: none !important;

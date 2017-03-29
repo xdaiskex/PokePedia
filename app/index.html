@@ -63,20 +63,38 @@
                 <h1 class="center">Pokepedia</h1>
                 <br>
                 <form id="pokemonForm" method="post">
-                    <label>Pokemon:</label>
-                    <input type="text" name="pName">
-                    <input type="submit" value="submit">
+                    <div class="input-group">
+                        <input type="text" name="pName" class="form-control">
+                        <span class="input-group-btn">
+                            <input type="submit" value="Search" class="btn btn-primary">
+                        </span>
+                    </div>
                 </form>
+            </div>
+        </div>
+
+        <div class="row center">
+            <div class="col-md-12">
+                <img id="image">
+            </div>
+            
+            <div class="col-md-3">
                 <h3>Name</h3>
                 <p id="name"></p>
+            </div>
+            <div class="col-md-3">
                 <h3>Number</h3>
                 <p id="number"></p>
+            </div>
+            <div class="col-md-3">
                 <h3>Type</h3>
                 <p id="type"></p>
+            </div>
+            <div class="col-md-3">
                 <h3>Moves</h3>
                 <p id="move"></p>
-                <button id="evolve">Evolve</button>
             </div>
+            <button id="evolve" class="btn btn-lg btn-primary">Evolve</button>
         </div>
     </div>
 </div>

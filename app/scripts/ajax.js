@@ -11,19 +11,23 @@ $(document).ready(function(){
 			$("#num").empty();
 			$("#type").empty();
 			$("#move").empty();
+			$("#image").empty();
 
-			$("#name").html(data.name);
+			$("#name").html(Capitalize(data.name));
 			$("#number").html(data.id);
+			$("#image").attr("src", data.sprites.front_default);
+			$("#image").attr("alt", data.name);
+
 
 			$.each(data.types, function(i, item){
 				console.log("Type " + (i+1) + ": " + data.types[i].type.name);
-				$("#type").append(data.types[i].type.name + "<br>");
+				$("#type").append(Capitalize(data.types[i].type.name) + "<br>");
 			});
 
 			$.each(data.moves, function(i, item){
 				if(data.moves[i].version_group_details[0].move_learn_method.name == "level-up"){
 					console.log("Move " + (i+1) + ": " + data.moves[i].move.name);
-					$("#move").append(data.moves[i].move.name + "<br>");
+					$("#move").append(Capitalize(data.moves[i].move.name) + "<br>");
 				}
 			});
 		});
@@ -39,9 +43,12 @@ $(document).ready(function(){
 			$("#num").empty();
 			$("#type").empty();
 			$("#move").empty();
+			$("#image").empty();
 
 			$("#name").html(data.name);
 			$("#number").html(data.id);
+			$("#image").attr("src", data.sprites.front_default);
+			$("#image").attr("alt", data.name);
 
 			$.each(data.types, function(i, item){
 				console.log("Type " + (i+1) + ": " + data.types[i].type.name);
@@ -55,6 +62,10 @@ $(document).ready(function(){
 				}
 			});
 		});
+	}
+
+	function Capitalize(string) {
+	    return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 
 	$("#pokemonForm").on('submit', function(event){
