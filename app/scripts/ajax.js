@@ -11,12 +11,12 @@ $(document).ready(function(){
 			$('#num').empty();
 			$('#type').empty();
 			$('#move').empty();
-			$('#image').empty();
+			$('#pokedexImage').empty();
 
 			$('#name').html(Capitalize(data.name));
 			$('#number').html(data.id);
-			$('#image').attr('src', data.sprites.front_default);
-			$('#image').attr('alt', data.name);
+			$('#pokedexImage').attr('src', data.sprites.front_default);
+			$('#pokedexImage').attr('alt', data.name);
 
 
 			$.each(data.types, function(i, item){
@@ -30,6 +30,12 @@ $(document).ready(function(){
 					$('#move').append(Capitalize(data.moves[i].move.name) + '<br>');
 				}
 			});
+		}).done(function() { 
+			console.log('request successful'); 
+		}).fail(function() { 
+			console.log('request failed'); 
+			$('.pokemon').empty();
+			$('.pokemon').append('<h4 class=\'noResults\'>No results found</h4>');
 		});
 	}
 
@@ -39,8 +45,7 @@ $(document).ready(function(){
 
 	$('#pokemonForm').on('submit', function(event){
 		event.preventDefault();
-		var pokemon = $(this).serialize();
-		//console.log(pokemon.substr(6));
+		var pokemon = $(this).serialize();;
 		GetPokemon(pokemon.substr(6));
 	});
 

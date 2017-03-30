@@ -44,28 +44,30 @@
         <div class="collapse navbar-collapse" id="navbar-collapsing">
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="#"> Home </a>
+                    <a href="#first"> Pokedex </a>
                 </li>
                 <li class="">
-                    <a href="#"> Gallery </a>
+                    <a href="#second"> Starters </a>
                 </li>
                 <li class="">
-                    <a href="#"> Contact </a>
+                    <a href="#third"> Ash's Pokemon </a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 center">
-                <h1 class="center">Pokepedia</h1>
-                <br>
+<div id="fullpage">
+    <div class="section container" data-anchor="first">
+        <div class="row center">
+            <h2 class="center">Pokedex</h2>
+            <hr>
+        </div>
+        <div class="row pokedex">
+            <div class="col-md-4 col-md-offset-4 center">
                 <form id="pokemonForm" method="post">
                     <div class="input-group">
-                        <input type="text" name="pName" class="form-control">
+                        <input type="text" name="pName" class="form-control" placeholder="Search for Pokemon Id or name">
                         <span class="input-group-btn">
                             <input type="submit" value="Search" class="btn btn-primary">
                         </span>
@@ -74,29 +76,43 @@
                 <img src="images/loading.gif" alt="loading" id="loading">
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12 center pokemon">
+                <div class="col-md-12">
+                    <img id="pokedexImage">
+                </div>
+                <div class="col-md-3">
+                    <h3>Name</h3>
+                    <p id="name"></p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Number</h3>
+                    <p id="number"></p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Type</h3>
+                    <p id="type"></p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Moves</h3>
+                    <p id="move"></p>
+                </div>
+                <!-- <button id="evolve" class="btn btn-lg btn-primary">Evolve</button> -->
+            </div>
+        </div>
+    </div>
 
-        <div class="row center pokemon">
-            <div class="col-md-12">
-                <img id="image">
-            </div>
-            
-            <div class="col-md-3">
-                <h3>Name</h3>
-                <p id="name"></p>
-            </div>
-            <div class="col-md-3">
-                <h3>Number</h3>
-                <p id="number"></p>
-            </div>
-            <div class="col-md-3">
-                <h3>Type</h3>
-                <p id="type"></p>
-            </div>
-            <div class="col-md-3">
-                <h3>Moves</h3>
-                <p id="move"></p>
-            </div>
-            <button id="evolve" class="btn btn-lg btn-primary">Evolve</button>
+    <div class="section container" data-anchor="second">
+        <div class="row">
+            <h2>Starters</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="section container" data-anchor="third">
+        <div class="row">
+            <h2>Ash's Pokemon</h2>
+            <hr>
         </div>
     </div>
 </div>
