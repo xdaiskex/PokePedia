@@ -67,10 +67,14 @@ p{
     width: 200px;
 }
 
-.noResults{
+.error .noResults{
     font-weight: bold;
     font-size: 30px;
     margin-top: 30px;
+}
+
+.error{
+    display: none;
 }
 
 @media only screen and (max-width: 770px){

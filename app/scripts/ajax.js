@@ -18,7 +18,6 @@ $(document).ready(function(){
 			$('#pokedexImage').attr('src', data.sprites.front_default);
 			$('#pokedexImage').attr('alt', data.name);
 
-
 			$.each(data.types, function(i, item){
 				console.log('Type ' + (i+1) + ': ' + data.types[i].type.name);
 				$('#type').append(Capitalize(data.types[i].type.name) + '<br>');
@@ -26,18 +25,20 @@ $(document).ready(function(){
 
 			var j = 0;
 			$.each(data.moves, function(i, item){
-				if(data.moves[i].version_group_details[0].move_learn_method.name == 'level-up' && j < 5){
+				if(data.moves[i].version_group_details[0].move_learn_method.name == 'level-up' && j < 4){
 					console.log('Move ' + (i+1) + ': ' + data.moves[i].move.name);
 					$('#move').append(Capitalize(data.moves[i].move.name) + '<br>');
 					j++;
 				}
 			});
 		}).done(function() { 
+			$('.error').hide();
+			$('.pokemon').show();
 			console.log('request successful'); 
 		}).fail(function() { 
 			console.log('request failed'); 
-			$('.pokemon').empty();
-			$('.pokemon').append('<h4 class=\'noResults\'>No results found</h4>');
+			$('.pokemon').hide();
+			$('.error').show();
 		});
 	}
 
@@ -61,10 +62,10 @@ $(document).ready(function(){
 	$(document).ajaxStart(function(){
 		$('#loading').show();
 		$('.pokemon').hide();
+		$('.error').hide();
 	});
 
 	$(document).ajaxStop(function(){
 		$('#loading').hide();
-		$('.pokemon').show();
 	});
 });
