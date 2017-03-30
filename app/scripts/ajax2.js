@@ -32,9 +32,8 @@ $(document).ready(function(){
          $("#eye").empty();
          $.each(data, function(i, item){
             if(data[i].price > '70'){
-               console.log(data[i].name);
                /*$('#move').append(Capitalize(data.moves[i].move.name) + '<br>');*/
-               $("#eye").append(data[i].name + "<br>");
+               $("#eye").append("<p class='cat'>" + data[i].name + "</p>");
                $('#product').attr('src', data[1].image_link);
             }
          });
@@ -47,5 +46,10 @@ $(document).ready(function(){
          $("#joke").empty();
          $("#joke").append(data.value.joke + "<br>");
       });
+   });
+
+   $("#eye").delegate(".cat", "click", function(){
+      var name = $(this).html();
+      console.log(name);
    });
 });
