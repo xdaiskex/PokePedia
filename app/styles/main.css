@@ -116,6 +116,12 @@ hr{
     margin-top: 20px;
 }
 
+#product{
+    width: 200px !important;
+    height: 200px !important;
+    border: 2px solid black;
+}
+
 @media only screen and (max-width: 770px){
     .nav li a{
         box-shadow: none !important;

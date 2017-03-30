@@ -5,7 +5,8 @@
     "bootstrap": "~3.3.5",
     "modernizr": "~2.8.1",
     "pixi.js": "^4.4.3",
-    "fullpage.js": "^2.9.4"
+    "fullpage.js": "^2.9.4",
+    "animate.css": "^3.5.2"
   },
   "overrides": {
     "bootstrap": {
