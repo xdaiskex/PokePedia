@@ -24,10 +24,12 @@ $(document).ready(function(){
 				$('#type').append(Capitalize(data.types[i].type.name) + '<br>');
 			});
 
+			var j = 0;
 			$.each(data.moves, function(i, item){
-				if(data.moves[i].version_group_details[0].move_learn_method.name == 'level-up'){
+				if(data.moves[i].version_group_details[0].move_learn_method.name == 'level-up' && j < 5){
 					console.log('Move ' + (i+1) + ': ' + data.moves[i].move.name);
 					$('#move').append(Capitalize(data.moves[i].move.name) + '<br>');
+					j++;
 				}
 			});
 		}).done(function() { 
