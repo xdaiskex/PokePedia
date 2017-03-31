@@ -4,39 +4,42 @@ $(document).ready(function(){
 
 	$.getJSON('http://pokeapi.co/api/v2/pokemon/1/', function(data){
 		$('.grass').empty();
-		$('.grass').append("<img src='" + data.sprites.front_default + "' alt='" + data.name + "'>");
+		$('.grass').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 	});
 
 	$.getJSON('http://pokeapi.co/api/v2/pokemon/4/', function(data){
 		$('.fire').empty();
-		$('.fire').append("<img src='" + data.sprites.front_default + "' alt='" + data.name + "'>");
+		$('.fire').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 	});
 
 	$.getJSON('http://pokeapi.co/api/v2/pokemon/7/', function(data){
 		$('.water').empty();
-		$('.water').append("<img src='" + data.sprites.front_default + "' alt='" + data.name + "'>");
+		$('.water').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 	});
 
 	function Evolve(id){
+		$('.grass').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300);
+		$('.fire').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300);
+		$('.water').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300);
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 0) + '/', function(data){
 			$('#bulbasaur h3').empty();
 			$('#bulbasaur h3').html(Capitalize(data.name));
 			$('.grass').empty();
-			$('.grass').append("<img src='" + data.sprites.front_default + "' alt='" + data.name + "'>");
+			$('.grass').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 		});
 
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 3) + '/', function(data){
 			$('#charmander h3').empty();
 			$('#charmander h3').html(Capitalize(data.name));
 			$('.fire').empty();
-			$('.fire').append("<img src='" + data.sprites.front_default + "' alt='" + data.name + "'>");
+			$('.fire').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 		});
 
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 6) + '/', function(data){
 			$('#squirtle h3').empty();
 			$('#squirtle h3').html(Capitalize(data.name));
 			$('.water').empty();
-			$('.water').append("<img src='" + data.sprites.front_default + "' alt='" + data.name + "'>");
+			$('.water').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 		});
 
 		evolve1++;
@@ -98,8 +101,8 @@ $(document).ready(function(){
 	});*/
 
 	$('#evolve1').click(function(){
-		var id = parseInt($("#bulbasaur h3").attr("class"));
-		$("#bulbasaur h3").attr("class", id + 1) ;
+		var id = parseInt($('#bulbasaur h3').attr('class'));
+		$('#bulbasaur h3').attr('class', id + 1) ;
 		console.log(id);
 		Evolve(id + 1);
 		if(evolve1 == 2){

@@ -117,6 +117,20 @@ p{
     height: 300px;
 }
 
+.starterInfo img{
+    -webkit-filter: drop-shadow(1px 1px 0 black)
+                    drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(1px 1px 0 black) 
+            drop-shadow(-1px -1px 0 black);
+}
+
+.pokemon img{
+    -webkit-filter: drop-shadow(1px 1px 0 black)
+                    drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(1px 1px 0 black) 
+            drop-shadow(-1px -1px 0 black);
+}
+
 @media only screen and (max-width: 770px){
     .nav li a{
         box-shadow: none !important;
