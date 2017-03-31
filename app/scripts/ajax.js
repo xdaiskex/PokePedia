@@ -18,9 +18,9 @@ $(document).ready(function(){
 	});
 
 	function Evolve(id){
-		$('.grass').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300);
-		$('.fire').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300);
-		$('.water').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300);
+		$('.grass').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
+		$('.fire').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
+		$('.water').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 0) + '/', function(data){
 			$('#bulbasaur h3').empty();
 			$('#bulbasaur h3').html(Capitalize(data.name));
