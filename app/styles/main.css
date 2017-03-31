@@ -95,14 +95,26 @@ p{
 
 .grass{
     background-color: #87D37C;
+    border-radius: 50%;
 }
 
 .fire{
     background-color: #EC644B;
+    border-radius: 50%;
 }
 
 .water{
     background-color: #52B3D9;
+    border-radius: 50%;
+}
+
+.second{
+    background-color: #FDE3A7;
+}
+
+.starterInfo img{
+    width: 300px;
+    height: 300px;
 }
 
 @media only screen and (max-width: 770px){
