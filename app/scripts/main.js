@@ -9,10 +9,22 @@ $(document).ready(function() {
 	$('#pokeball').hover(function(){
 		$(this).css('filter', 'brightness(.5)');
 		$(this).css('transition', '.5s');
+		var wobble = document.getElementById('pokeballWobble');
+	   	$('#pokeballWobble').prop('volume', 0);
+	    $('#pokeballWobble').on('play', function() {
+	    	$('#pokeballWobble').animate({volume: 1}, 500);
+	    });
+	    wobble.play();
 	},
     function(){
         $(this).css('filter', 'brightness(1)');
 		$(this).css('transition', '.5s');
+		var wobble = document.getElementById('pokeballWobble');
+		$('#pokeballWobble').animate({volume: 0}, 500);
+		
+		setTimeout(function(){
+			wobble.pause();
+	    }, 500);
     });
 
     $('#pokeball').click(function(){
