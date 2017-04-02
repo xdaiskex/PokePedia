@@ -141,12 +141,13 @@ p{
 
 #pokeball{
     -webkit-transition: -webkit-transform .5s ease-in-out;
-            transition:         transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+    transform-origin: bottom;
 
 }
 #pokeball:hover{
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
             animation-name: spin;
     animation-duration: 500ms;
     animation-iteration-count: infinite;
@@ -158,16 +159,16 @@ p{
 
 @-webkit-keyframes spin { 
     from { 
-        -webkit-transform: rotate(40deg); 
+        -webkit-transform: rotate(10deg); 
     } to { 
-        -webkit-transform: rotate(-40deg); 
+        -webkit-transform: rotate(-10deg); 
     } 
 }
 @keyframes spin { 
     from { 
-        transform: rotate(40deg); 
+        transform: rotate(10deg); 
     } to { 
-        transform: rotate(-40deg); 
+        transform: rotate(-10deg); 
     }
 }
 #pokeball{
