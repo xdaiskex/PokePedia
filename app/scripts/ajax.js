@@ -21,6 +21,9 @@ $(document).ready(function(){
 		$('.grass').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
 		$('.fire').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
 		$('.water').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
+		/*$('.second').delay("slow").css('opacity', 0);
+		$('.second').css('transition', '1s');*/
+
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 0) + '/', function(data){
 			$('#bulbasaur h3').empty();
 			$('#bulbasaur h3').html(Capitalize(data.name));

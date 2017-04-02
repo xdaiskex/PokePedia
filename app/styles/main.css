@@ -131,6 +131,49 @@ p{
             drop-shadow(-1px -1px 0 black);
 }
 
+.flash{
+    opacity: 0;
+}
+
+.pokedex{
+    display: none;
+}
+
+#pokeball{
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+            transition:         transform .5s ease-in-out;
+
+}
+#pokeball:hover{
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+            animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-delay: .5s;
+            
+}
+
+@-webkit-keyframes spin { 
+    from { 
+        -webkit-transform: rotate(40deg); 
+    } to { 
+        -webkit-transform: rotate(-40deg); 
+    } 
+}
+@keyframes spin { 
+    from { 
+        transform: rotate(40deg); 
+    } to { 
+        transform: rotate(-40deg); 
+    }
+}
+#pokeball{
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 770px){
     .nav li a{
         box-shadow: none !important;
