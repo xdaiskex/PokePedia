@@ -110,7 +110,7 @@ p{
 }
 
 .second{
-    background-color: #FDE3A7;
+    /*background-color: #FDE3A7;*/
 }
 
 .starterInfo img{
@@ -177,8 +177,17 @@ p{
         transform: rotate(-10deg); 
     }
 }
+
 #pokeball{
     cursor: pointer;
+}
+
+.fp-controlArrow.fp-prev{
+    border-color: transparent black;
+}
+
+.fp-controlArrow.fp-next{
+    border-color: transparent black;
 }
 
 @media only screen and (max-width: 770px){

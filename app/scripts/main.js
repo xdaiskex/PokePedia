@@ -30,8 +30,10 @@ $(document).ready(function() {
     $('#pokeball').click(function(){
 		$('.first').css('opacity', '0');
 		$('.first').css('transition', '1s');
-
+		$('#pokeballWobble').animate({volume: 0}, 500);
 		setTimeout(function(){
+			var wobble = document.getElementById('pokeballWobble');
+			wobble.pause();
 			var pokeball = document.getElementById('pokeballOpen');
 	    	pokeball.play();
 	    }, 200);
