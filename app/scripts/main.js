@@ -16,11 +16,17 @@ $(document).ready(function() {
     });
 
     $('#pokeball').click(function(){
-		$('.container').css('opacity', '0');
-		//$('.navbar').css('opacity', '0');
+		$('.first').css('opacity', '0');
 		$('.first').css('transition', '1s');
-		$('.pokedex').css('display', 'block');
-		/*$('.first').css('opacity', '1');
-		$('.first').css('transition', '1s');*/
+
+		setTimeout(function(){
+			$('#pokeman').css('display', 'block');
+			$('.welcome2').css('display', 'block');
+			$('.welcome1').css('display', 'none');
+			$('.first').css('opacity', '1');
+			$('.first').css('transition', '2s');
+			$('#pokeball').remove();
+		}, 2000);
+		
 	});
 });

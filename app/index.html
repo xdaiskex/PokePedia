@@ -44,13 +44,13 @@
         <div class="collapse navbar-collapse" id="navbar-collapsing">
             <ul class="nav navbar-nav navbar-right" id="menu">
                 <li class="active">
-                    <a href="#first" data-menuanchor="first"> Pokedex </a>
+                    <a href="#first" data-menuanchor="first"> Home </a>
                 </li>
                 <li>
                     <a href="#second" data-menuanchor="second"> Starters </a>
                 </li>
                 <li>
-                    <a href="#third" data-menuanchor="third"> Dream team </a>
+                    <a href="#third" data-menuanchor="third"> Pokedex </a>
                 </li>
             </ul>
         </div>
@@ -59,50 +59,12 @@
 
 <div id="fullpage">
     <div class="section container first" data-anchor="first">
-        <div class="row center">
-            <h2 class="center">POKEDEX</h2>
+         <div class="row center">
+            <h2 class="welcome1 center">Welcome...</h2>
+            <h2 class="welcome2">...to the wonderful world of Pokemon!</h2>
             <hr>
             <img src="images/pokeball.png" alt="pokeball" id="pokeball">
-        </div>
-        <div class="row pokedex">
-            <div class="col-md-4 col-md-offset-4 center">
-                <form id="pokemonForm" method="post">
-                    <div class="input-group">
-                        <input type="text" name="pName" class="form-control" placeholder="Search for Pokemon Id or name">
-                        <span class="input-group-btn">
-                            <input type="submit" value="Search" class="btn btn-primary">
-                        </span>
-                    </div>
-                </form>
-                <img src="images/loading.gif" alt="loading" id="loading">
-            </div>
-        </div>
-        <div class="row">
-            <div class="error center">
-                <h4 class='noResults'>No results found</h4>
-            </div>
-
-            <div class="col-md-12 center pokemon">
-                <div class="col-md-12">
-                    <img id="pokedexImage">
-                </div>
-                <div class="col-md-3">
-                    <h3>Name</h3>
-                    <p id="name"></p>
-                </div>
-                <div class="col-md-3">
-                    <h3>Number</h3>
-                    <p id="number"></p>
-                </div>
-                <div class="col-md-3">
-                    <h3>Type</h3>
-                    <p id="type"></p>
-                </div>
-                <div class="col-md-3">
-                    <h3>Moves</h3>
-                    <p id="move"></p>
-                </div>
-            </div>
+            <img src="images/pokeman.png" alt="pokeball" id="pokeman">
         </div>
     </div>
 
@@ -185,9 +147,49 @@
     </div>
 
     <div class="section container third" data-anchor="third">
-        <div class="row">
-            <h2>DREAM TEAM</h2>
+        <div class="row center">
+            <h2 class="center">POKEDEX</h2>
             <hr>
+        </div>
+        <div class="row pokedex">
+            <div class="col-md-4 col-md-offset-4 center">
+                <form id="pokemonForm" method="post">
+                    <div class="input-group">
+                        <input type="text" name="pName" class="form-control" placeholder="Search for Pokemon Id or name">
+                        <span class="input-group-btn">
+                            <input type="submit" value="Search" class="btn btn-primary">
+                        </span>
+                    </div>
+                </form>
+                <img src="images/loading.gif" alt="loading" id="loading">
+            </div>
+        </div>
+        <div class="row">
+            <div class="error center">
+                <h4 class='noResults'>No results found</h4>
+            </div>
+
+            <div class="col-md-12 center pokemon">
+                <div class="col-md-12">
+                    <img id="pokedexImage">
+                </div>
+                <div class="col-md-3">
+                    <h3>Name</h3>
+                    <p id="name"></p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Number</h3>
+                    <p id="number"></p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Type</h3>
+                    <p id="type"></p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Moves</h3>
+                    <p id="move"></p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
