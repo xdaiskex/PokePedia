@@ -20,11 +20,15 @@ $(document).ready(function() {
 		$('.first').css('transition', '1s');
 
 		setTimeout(function(){
+			var pokeball = document.getElementById('pokeballOpen');
+	    	pokeball.play();
+	    }, 200);
+		setTimeout(function(){
 			$('#pokeman').css('display', 'block');
 			$('.welcome2').css('display', 'block');
 			$('.welcome1').css('display', 'none');
 			$('.first').css('opacity', '1');
-			$('.first').css('transition', '2s');
+			$('.first').css('transition', '3s');
 			$('#pokeball').remove();
 		}, 2000);
 		
