@@ -38,6 +38,10 @@ $(document).ready(function() {
 	    	pokeball.play();
 	    }, 200);
 		setTimeout(function(){
+			$('.navbar').css('opacity', '1');
+			$('.navbar').css('transition', '1s');
+			$('.second, .third').css('display', 'block');
+			$('.second, .third').css('transition', '1s');
 			$('#pokeman').css('display', 'block');
 			$('.welcome2').css('display', 'block');
 			$('.welcome1').css('display', 'none');
@@ -45,6 +49,9 @@ $(document).ready(function() {
 			$('.first').css('transition', '3s');
 			$('#pokeball').remove();
 		}, 2000);
-		
+		setTimeout(function(){
+			var background = document.getElementById('backgroundMusic');
+			background.play();
+	    }, 3500);
 	});
 });

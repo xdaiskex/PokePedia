@@ -109,8 +109,12 @@ p{
     border-radius: 50%;
 }
 
-.second{
-    /*background-color: #FDE3A7;*/
+.second, .third{
+    display: none;
+}
+
+.navbar{
+    opacity: 0;
 }
 
 .starterInfo img{
