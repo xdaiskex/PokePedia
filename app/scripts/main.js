@@ -10,21 +10,23 @@ $(document).ready(function() {
 		$(this).css('filter', 'brightness(.5)');
 		$(this).css('transition', '.5s');
 		var wobble = document.getElementById('pokeballWobble');
-	   	$('#pokeballWobble').prop('volume', 0);
+	   	$('#pokeballWobble').prop('volume', 1);
 	    $('#pokeballWobble').on('play', function() {
-	    	$('#pokeballWobble').animate({volume: 1}, 500);
+	    	$('#pokeballWobble').animate({volume: 1}, 300);
 	    });
 	    wobble.play();
 	},
     function(){
+    	$(this).removeClass('animated bounceInDown');
         $(this).css('filter', 'brightness(1)');
 		$(this).css('transition', '.5s');
 		var wobble = document.getElementById('pokeballWobble');
-		$('#pokeballWobble').animate({volume: 0}, 500);
+		$('#pokeballWobble').animate({volume: 0}, 300);
 		
 		setTimeout(function(){
 			wobble.pause();
-	    }, 500);
+			wobble.currentTime = 0;
+	    }, 100);
     });
 
     $('#pokeball').click(function(){

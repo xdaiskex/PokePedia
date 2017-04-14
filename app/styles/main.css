@@ -136,6 +136,21 @@ p{
             drop-shadow(-1px -1px 0 black);
 }
 
+.welcome1 {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: .5s;
+}
+
+.hr {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 1.25s;
+}
+
+#pokeball {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 1.5s;
+}
+
 .flash{
     opacity: 0;
 }
