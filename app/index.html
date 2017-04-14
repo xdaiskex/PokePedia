@@ -18,6 +18,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
@@ -38,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand"> Pokepedia</a>
+            <a href="#first" class="navbar-brand"> Pokepedia</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapsing">
@@ -67,6 +68,9 @@
     <audio id="backgroundMusic" loop>
         <source src="background.ogg"></source>
     </audio>
+    <audio id="evolveMusic">
+        <source src="evolve.ogg"></source>
+    </audio>
     <div class="section container first" data-anchor="first">
          <div class="row center">
             <h2 class="welcome1 center animated bounceIn">Welcome</h2>
@@ -80,10 +84,9 @@
     <div class="section container second" data-anchor="second">
         <div class="row">
             <h2>STARTERS</h2>
-            <hr>
         </div>
         <div class="row center starters slide">
-            <div class="col-md-4">
+            <div class="col-md-4 center">
                 <div class="starterInfo grass">
 
                 </div>
@@ -91,7 +94,7 @@
                     <h3 class="1">Bulbasaur</h3>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 center">
                 <div class="starterInfo fire">
                     
                 </div>
@@ -99,7 +102,7 @@
                     <h3>Charmander</h3>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 center">
                 <div class="starterInfo water">
                     
                 </div>
@@ -107,58 +110,40 @@
                     <h3>Squirtle</h3>
                 </div>
             </div>
-            <div class="col-md-12">
-                <h3>(1st Generation)</h3>
-            </div>
-            <button id="evolve1" class="btn btn-lg btn-primary">Evolve</button>
+            <button id="evolve1" class="btn btn-lg evolveBtn">Evolve</button>
         </div>
         <div class="row center starters slide">
-            <div class="col-md-4">
-                <div class="starterInfo grass">
+            <div class="col-md-4 center">
+                <div class="starterInfo grass2">
 
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="starterInfo fire">
-
+                <div id="chikorita">
+                    <h3 class="152">Chikorita</h3>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="starterInfo water">
-
+            <div class="col-md-4 center">
+                <div class="starterInfo fire2">
+                    
+                </div>
+                <div id="cyndaquil">
+                    <h3>Cyndaquil</h3>
                 </div>
             </div>
-            <div class="col-md-12">
-                <h3>(2nd Generation)</h3>
-            </div>
-            <button id="evolve2" class="btn btn-lg btn-primary">Evolve</button>
-        </div>
-        <div class="row center starters slide">
-            <div class="col-md-4">
-                <div class="starterInfo grass">
-
+            <div class="col-md-4 center">
+                <div class="starterInfo water2">
+                    
+                </div>
+                <div id="totodile">
+                    <h3>Totodile</h3>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="starterInfo fire">
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="starterInfo water">
-
-                </div>
-            </div>
-            <div class="col-md-12">
-                <h3>(3rd Generation)</h3>
-            </div>
+            <button id="evolve2" class="btn btn-lg evolveBtn">Evolve</button>
         </div>
     </div>
 
     <div class="section container third" data-anchor="third">
         <div class="row center">
             <h2 class="center">POKEDEX</h2>
-            <hr>
         </div>
         <div class="row pokedex">
             <div class="col-md-4 col-md-offset-4 center">

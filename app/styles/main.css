@@ -8,11 +8,14 @@ nav{
 
 nav li a{
     color: white !important;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
 }
 
 .nav li a:hover{
     background-color: white !important;
     color: #4183D7 !important;
+    padding-bottom: 20px;
 }
 
 .navbar{
@@ -22,15 +25,25 @@ nav li a{
 #menu .active{
     background-color: white !important;
     color: #4183D7 !important;
+    padding-bottom: 20px;
 }
 
 .btn-primary{
     background-color: #4183D7;
 }
 
+@font-face {
+    font-family: pokemon;
+    src: url(../fonts/pokemon.ttf);
+}
+
 .navbar-brand{
-    font-size: 20px;
+    font-size: 35px;
     color: white !important;
+    font-family: pokemon;
+    letter-spacing: 4px;
+    margin-top: -5px;
+    padding-bottom: 45px;
 }
 
 .center{
@@ -43,10 +56,11 @@ nav li a{
 
 h2{
     text-align: center;
-    font-size: 34px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 50px;
     margin-top: 80px;
+    font-family: 'Permanent Marker', cursive;
 }
 
 hr{
@@ -94,19 +108,26 @@ p{
     margin: auto;
 }
 
-.grass{
+.starterInfo img{
+    padding: 10px;
+}
+
+.grass, .grass2{
     background-color: #87D37C;
     border-radius: 50%;
+    border: 5px solid black;
 }
 
-.fire{
+.fire, .fire2{
     background-color: #EC644B;
     border-radius: 50%;
+    border: 5px solid black;
 }
 
-.water{
+.water, .water2{
     background-color: #52B3D9;
     border-radius: 50%;
+    border: 5px solid black;
 }
 
 .second, .third{
@@ -122,9 +143,26 @@ p{
     height: 300px;
 }
 
+.starters{
+    margin: auto;
+}
+
+.evolveBtn{
+    background-color: white;
+    color: black;
+    margin-top: 25px;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 2px solid black;
+}
+
+.evolveBtn:hover{
+    background-color: black;
+    color: white;
+}
+
 .starterInfo img{
-    -webkit-filter: drop-shadow(1px 1px 0 black)
-                    drop-shadow(-1px -1px 0 black);
     filter: drop-shadow(1px 1px 0 black) 
             drop-shadow(-1px -1px 0 black);
 }

@@ -1,7 +1,10 @@
 $(document).ready(function(){
 	var pokeId = 0;
 	var evolve1 = 0;
+	var evolve2 = 0;
+	var evolve3 = 0;
 
+	//Generation 1
 	$.getJSON('http://pokeapi.co/api/v2/pokemon/1/', function(data){
 		$('.grass').empty();
 		$('.grass').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
@@ -17,10 +20,29 @@ $(document).ready(function(){
 		$('.water').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 	});
 
+	//Generation 2
+	$.getJSON('http://pokeapi.co/api/v2/pokemon/152/', function(data){
+		$('.grass2').empty();
+		$('.grass2').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+	});
+
+	$.getJSON('http://pokeapi.co/api/v2/pokemon/155/', function(data){
+		$('.fire2').empty();
+		$('.fire2').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+	});
+
+	$.getJSON('http://pokeapi.co/api/v2/pokemon/158/', function(data){
+		$('.water2').empty();
+		$('.water2').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+	});
+
 	function Evolve(id){
-		$('.grass').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
-		$('.fire').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
-		$('.water').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(3000);
+		$('.grass img').css('filter', 'brightness(0) invert(1)');
+		$('.fire img').css('filter', 'brightness(0) invert(1)');
+		$('.water img').css('filter', 'brightness(0) invert(1)');
+		$('.grass img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300);
+		$('.fire img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300);
+		$('.water img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300);
 		/*$('.second').delay("slow").css('opacity', 0);
 		$('.second').css('transition', '1s');*/
 
@@ -29,6 +51,8 @@ $(document).ready(function(){
 			$('#bulbasaur h3').html(Capitalize(data.name));
 			$('.grass').empty();
 			$('.grass').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+			$('.grass img').css('filter', 'brightness(0) invert(1)');
+			$('.grass img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
 		});
 
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 3) + '/', function(data){
@@ -36,6 +60,8 @@ $(document).ready(function(){
 			$('#charmander h3').html(Capitalize(data.name));
 			$('.fire').empty();
 			$('.fire').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+			$('.fire img').css('filter', 'brightness(0) invert(1)');
+			$('.fire img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
 		});
 
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 6) + '/', function(data){
@@ -43,9 +69,51 @@ $(document).ready(function(){
 			$('#squirtle h3').html(Capitalize(data.name));
 			$('.water').empty();
 			$('.water').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+			$('.water img').css('filter', 'brightness(0) invert(1)');
+			$('.water img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
 		});
 
 		evolve1++;
+	}
+
+	function Evolve2(id){
+		$('.grass2 img').css('filter', 'brightness(0) invert(1)');
+		$('.fire2 img').css('filter', 'brightness(0) invert(1)');
+		$('.water2 img').css('filter', 'brightness(0) invert(1)');
+		$('.grass2 img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300);
+		$('.fire2 img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300);
+		$('.water2 img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300);
+		/*$('.second').delay("slow").css('opacity', 0);
+		$('.second').css('transition', '1s');*/
+
+		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 0) + '/', function(data){
+			$('#chikorita h3').empty();
+			$('#chikorita h3').html(Capitalize(data.name));
+			$('.grass2').empty();
+			$('.grass2').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+			$('.grass2 img').css('filter', 'brightness(0) invert(1)');
+			$('.grass2 img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+		});
+
+		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 3) + '/', function(data){
+			$('#cyndaquil h3').empty();
+			$('#cyndaquil h3').html(Capitalize(data.name));
+			$('.fire2').empty();
+			$('.fire2').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+			$('.fire2 img').css('filter', 'brightness(0) invert(1)');
+			$('.fire2 img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+		});
+
+		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + (id + 6) + '/', function(data){
+			$('#totodile h3').empty();
+			$('#totodile h3').html(Capitalize(data.name));
+			$('.water2').empty();
+			$('.water2').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
+			$('.water2 img').css('filter', 'brightness(0) invert(1)');
+			$('.water2 img').fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+		});
+
+		evolve2++;
 	}
 
 	function GetPokemon(pokemon){
@@ -110,6 +178,16 @@ $(document).ready(function(){
 		Evolve(id + 1);
 		if(evolve1 == 2){
 			$('#evolve1').remove();
+		}
+	});
+
+	$('#evolve2').click(function(){
+		var id = parseInt($('#chikorita h3').attr('class'));
+		$('#chikorita h3').attr('class', id + 1) ;
+		console.log(id);
+		Evolve2(id + 1);
+		if(evolve2 == 2){
+			$('#evolve2').remove();
 		}
 	});
 
