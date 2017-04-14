@@ -1,3 +1,13 @@
+@font-face {
+    font-family: pokemon;
+    src: url(../fonts/pokemon.ttf);
+}
+
+@font-face {
+    font-family: marker;
+    src: url(../fonts/marker.ttf);
+}
+
 body{
     font-family: helvetica;
 }
@@ -8,7 +18,7 @@ nav{
 
 nav li a{
     color: white !important;
-    font-family: 'Permanent Marker', cursive;
+    font-family: marker;
     font-size: 25px;
 }
 
@@ -30,11 +40,6 @@ nav li a{
 
 .btn-primary{
     background-color: #4183D7;
-}
-
-@font-face {
-    font-family: pokemon;
-    src: url(../fonts/pokemon.ttf);
 }
 
 .navbar-brand{
@@ -60,7 +65,7 @@ h2{
     font-weight: bold;
     margin-bottom: 50px;
     margin-top: 80px;
-    font-family: 'Permanent Marker', cursive;
+    font-family: marker;
 }
 
 hr{
