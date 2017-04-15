@@ -6,13 +6,17 @@ $(document).ready(function() {
 		anchors:['first', 'second', 'third']
 	});
 
+	location.replace('#first');
+
+	$.fn.fullpage.setAllowScrolling(false);
+
 	$('#pokeball').hover(function(){
 		$(this).css('filter', 'brightness(.5)');
 		$(this).css('transition', '.5s');
 		var wobble = document.getElementById('pokeballWobble');
 	   	$('#pokeballWobble').prop('volume', 1);
 	    $('#pokeballWobble').on('play', function() {
-	    	$('#pokeballWobble').animate({volume: 1}, 300);
+	    	$('#pokeballWobble').animate({volume: .5}, 300);
 	    });
 	    wobble.play();
 	},
@@ -38,6 +42,7 @@ $(document).ready(function() {
 			wobble.pause();
 			var pokeball = document.getElementById('pokeballOpen');
 	    	pokeball.play();
+	    	$('#pokeballWobble').animate({volume: .5}, 100);
 	    }, 200);
 		setTimeout(function(){
 			$('.navbar').css('opacity', '1');
@@ -54,7 +59,8 @@ $(document).ready(function() {
 		setTimeout(function(){
 			var background = document.getElementById('backgroundMusic');
 			background.play();
-			$('#backgroundMusic').animate({volume: .2}, 100);
+			$('#backgroundMusic').animate({volume: .3}, 100);
+			$.fn.fullpage.setAllowScrolling(true);
 	    }, 3500);
 	});
 
@@ -97,7 +103,7 @@ $(document).ready(function() {
 			$('.fire img').removeClass('tada');
 			$('.water img').removeClass('animated');
 			$('.water img').removeClass('tada');
-			$('#backgroundMusic').animate({volume: .2}, 1000);
+			$('#backgroundMusic').animate({volume: .3}, 1000);
 	    }, 17000);
 	    setTimeout(function(){
 	    	$('#evolve1').show();
@@ -143,7 +149,7 @@ $(document).ready(function() {
 			$('.fire2 img').removeClass('tada');
 			$('.water2 img').removeClass('animated');
 			$('.water2 img').removeClass('tada');
-			$('#backgroundMusic').animate({volume: .2}, 1000);
+			$('#backgroundMusic').animate({volume: .3}, 1000);
 	    }, 17000);
 	    setTimeout(function(){
 	    	$('#evolve2').show();
