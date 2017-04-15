@@ -65,15 +65,37 @@ $(document).ready(function() {
 	});
 
 	$('#evolve1').click(function(){
-		$('#evolve1').hide();
+		$.fn.fullpage.setAllowScrolling(false);
+		var click = document.getElementById('click');
+		click.play();
+		$('#evolve1').fadeOut();
+
+		setTimeout(function(){
+			$('.element').show();
+			$(function(){
+				$('.element').typed({
+					strings: ['What? Everyone is evolving!'],
+					typeSpeed: 20
+				});
+			});
+		}, 1000);
+		
 		var background = document.getElementById('backgroundMusic');
-		$('#backgroundMusic').animate({volume: 0}, 300);
-		var evolve = document.getElementById('evolveMusic');
-		evolve.play();
+		$('#backgroundMusic').animate({volume: 0}, 1500);
+		setTimeout(function(){
+			var evolve = document.getElementById('evolveMusic');
+			evolve.play();
+		}, 3000);
+		$('h2').css('opacity', '0');
+		$('h2').css('transition', '2s');
+		$('h3').css('opacity', '0');
+		$('h3').css('transition', '2s');
+		$('.second').css('background-color', 'black');
+		$('.second').css('transition', '2s');
 		setTimeout(function(){
 			$('.second').css('opacity', '0');
 			$('.second').css('transition', '1s');
-	    }, 7000);
+	    }, 10000);
 
 	    setTimeout(function(){
 	    	$('.grass img').css('filter', 'brightness(1) invert(0)');
@@ -84,7 +106,7 @@ $(document).ready(function() {
 	    	$('.water img').css('transition', '3s');
 			$('.second').css('opacity', '1');
 			$('.second').css('transition', '2s');
-	    }, 9000);
+	    }, 12000);
 	    setTimeout(function(){
 	    	$('.grass img').css('filter', 'drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black)');
 	    	$('.fire img').css('filter', 'drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black)');
@@ -95,8 +117,17 @@ $(document).ready(function() {
 			$('.fire img').addClass('tada');
 			$('.water img').addClass('animated');
 			$('.water img').addClass('tada');
-	    }, 11500);
+	    }, 14500);
 	    setTimeout(function(){
+	    	$(function(){
+				$('.element').typed({
+					strings: ['Congratulations! Everyone evolved!'],
+					typeSpeed: 20
+				});
+			});
+	    }, 16000);
+	    setTimeout(function(){
+	    	$('.second').css('background-color', 'white');
 	    	$('.grass img').removeClass('animated');
 			$('.grass img').removeClass('tada');
 			$('.fire img').removeClass('animated');
@@ -104,22 +135,36 @@ $(document).ready(function() {
 			$('.water img').removeClass('animated');
 			$('.water img').removeClass('tada');
 			$('#backgroundMusic').animate({volume: .3}, 1000);
-	    }, 17000);
+	    }, 20000);
 	    setTimeout(function(){
-	    	$('#evolve1').show();
-	    }, 18000);
+	    	$('.element').hide();
+	    	$('#evolve1').fadeIn();
+	    	$('h2').css('opacity', '1');
+	    	$('h3').css('opacity', '1');
+	    	$.fn.fullpage.setAllowScrolling(true);
+	    }, 21000);
 	});
 
 	$('#evolve2').click(function(){
-		$('#evolve2').hide();
+		var click = document.getElementById('click');
+		click.play();
+		$('#evolve2').fadeOut();
 		var background = document.getElementById('backgroundMusic');
 		$('#backgroundMusic').animate({volume: 0}, 300);
-		var evolve = document.getElementById('evolveMusic');
-		evolve.play();
+		setTimeout(function(){
+			var evolve = document.getElementById('evolveMusic');
+			evolve.play();
+		}, 2000);
+		
+		$('h2').css('opacity', '0');
+		$('h2').css('transition', '1s');
+		$('h3').css('opacity', '0');
+		$('h3').css('transition', '1s');
+		$('.second').css('background-color', 'black');
 		setTimeout(function(){
 			$('.second').css('opacity', '0');
 			$('.second').css('transition', '1s');
-	    }, 7000);
+	    }, 9000);
 
 	    setTimeout(function(){
 	    	$('.grass2 img').css('filter', 'brightness(1) invert(0)');
@@ -130,7 +175,7 @@ $(document).ready(function() {
 	    	$('.water2 img').css('transition', '3s');
 			$('.second').css('opacity', '1');
 			$('.second').css('transition', '2s');
-	    }, 9000);
+	    }, 11000);
 	    setTimeout(function(){
 	    	$('.grass2 img').css('filter', 'drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black)');
 	    	$('.fire2 img').css('filter', 'drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black)');
@@ -141,8 +186,9 @@ $(document).ready(function() {
 			$('.fire2 img').addClass('tada');
 			$('.water2 img').addClass('animated');
 			$('.water2 img').addClass('tada');
-	    }, 11500);
+	    }, 13500);
 	    setTimeout(function(){
+	    	$('.second').css('background-color', 'white');
 	    	$('.grass2 img').removeClass('animated');
 			$('.grass2 img').removeClass('tada');
 			$('.fire2 img').removeClass('animated');
@@ -150,9 +196,11 @@ $(document).ready(function() {
 			$('.water2 img').removeClass('animated');
 			$('.water2 img').removeClass('tada');
 			$('#backgroundMusic').animate({volume: .3}, 1000);
-	    }, 17000);
+	    }, 19000);
 	    setTimeout(function(){
-	    	$('#evolve2').show();
-	    }, 18000);
+	    	$('#evolve2').fadeIn();
+	    	$('h2').css('opacity', '1');
+	    	$('h3').css('opacity', '1');
+	    }, 20000);
 	});
 });

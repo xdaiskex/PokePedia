@@ -78,6 +78,16 @@ hr{
 
 h3{
     font-weight: bold;
+    font-size: 30px;
+}
+
+.element{
+    color: white;
+    font-size: 30px;
+}
+
+.typed-cursor{
+    opacity: 0;
 }
 
 p{
