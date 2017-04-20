@@ -81,7 +81,7 @@ h3{
     font-size: 30px;
 }
 
-.element{
+.elements{
     color: white;
     font-size: 30px;
 }
@@ -127,19 +127,19 @@ p{
     padding: 10px;
 }
 
-.grass, .grass2{
+.green{
     background-color: #87D37C;
     border-radius: 50%;
     border: 5px solid black;
 }
 
-.fire, .fire2{
+.red{
     background-color: #EC644B;
     border-radius: 50%;
     border: 5px solid black;
 }
 
-.water, .water2{
+.blue{
     background-color: #52B3D9;
     border-radius: 50%;
     border: 5px solid black;
@@ -162,7 +162,7 @@ p{
     margin: auto;
 }
 
-.evolveBtn{
+/*.evolveBtn{
     background-color: white;
     color: black;
     margin-top: 25px;
@@ -175,6 +175,52 @@ p{
 .evolveBtn:hover{
     background-color: black;
     color: white;
+}*/
+
+.evolveBtn {
+    background: none;
+    border: 3px solid black;
+    border-radius: 5px;
+    color: black;
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: auto;
+    margin-top: -10px;
+    padding: .5em 2em;
+    position: relative;
+    text-transform: uppercase;
+}
+
+button::before,
+button::after {
+    background: black;
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+.evolveBtn:hover {
+    color: white;
+}
+
+.evolveBtn {
+    overflow: hidden;
+}
+
+.evolveBtn::after {
+    height: 100%;
+    left: -35%;
+    top: 0;
+    transform: skew(50deg);
+    transition-duration: 0.6s;
+    transform-origin: top left;
+    width: 0;
+}
+
+.evolveBtn:hover:after {
+    height: 100%;
+    width: 135%;
 }
 
 .starterInfo img{
