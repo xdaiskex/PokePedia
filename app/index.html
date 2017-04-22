@@ -47,6 +47,9 @@
                     <a href="#first" data-menuanchor="first"> Home </a>
                 </li>
                 <li>
+                    <a href="#about" data-menuanchor="about"> About </a>
+                </li>
+                <li>
                     <a href="#second" data-menuanchor="second"> Starters </a>
                 </li>
                 <li>
@@ -80,6 +83,19 @@
             <hr class="animated bounceIn hr">
             <img src="images/pokeball.png" alt="pokeball" id="pokeball" class="animated bounceInDown">
             <img src="images/pokeman.png" alt="pokeball" id="pokeman">
+        </div>
+    </div>
+
+    <div class="section container about" data-anchor="about">
+        <div class="row center">
+            <h2 class="center">What is Pokemon?</h2>
+        </div>
+        <div class="row center what">
+            <img src="images/pokeball.png" alt="pokeball">
+            <h3>+</h3>
+            <img src="images/pikachu.png" alt="pikachu">
+            <h3>=</h3>
+            <img src="images/pikachu.gif" alt="pikachu" class="pikachu">
         </div>
     </div>
 
@@ -264,12 +280,13 @@
         <div class="row pokedex">
             <div class="col-md-4 col-md-offset-4 center">
                 <form id="pokemonForm" method="post">
-                    <div class="input-group">
-                        <input type="text" name="pName" class="form-control" placeholder="Search for Pokemon Id or name">
+                    <input type="text" name="pName" class="form-control" placeholder="Pick a number 1-721 or type a name" id="searchForm">
+                    <!-- <div class="input-group">
+                        <input type="text" name="pName" class="form-control" placeholder="Search for Pokemon Id or name" id="searchForm">
                         <span class="input-group-btn">
-                            <input type="submit" value="Search" class="btn btn-primary">
+                            <input type="submit" value="Search" class="btn btn-primary" id="searchPoke">
                         </span>
-                    </div>
+                    </div> -->
                 </form>
                 <img src="images/loading.gif" alt="loading" id="loading">
             </div>

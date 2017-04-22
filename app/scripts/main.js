@@ -3,12 +3,23 @@ $(document).ready(function() {
 		menu: '#menu',
 		keyboardScrolling: true,
 		verticalCentered: false,
-		anchors:['first', 'second', 'third']
+		anchors:['first', 'about', 'second', 'third']
 	});
 
 	location.replace('#first');
 
 	$.fn.fullpage.setAllowScrolling(false);
+
+	$('#searchForm').focus(function(){
+		$('#searchForm').css('box-shadow', '0 0 20px rgba(81, 203, 238, 1');
+    	$('#searchForm').css('border', '1px solid rgba(81, 203, 238, 1');
+    	$('#searchForm').css('transition', '.5s');
+	});
+	$('#searchForm').blur(function(){
+		$('#searchForm').css('box-shadow', 'none');
+    	$('#searchForm').css('border', '1px solid gray');
+    	$('#searchForm').css('transition', '.5s');
+	});
 
 	$('#pokeball').hover(function(){
 		$(this).css('filter', 'brightness(.5)');

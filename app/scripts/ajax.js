@@ -367,14 +367,34 @@ $(document).ready(function(){
 					j++;
 				}
 			});
+
+			$('#pokedexImage').addClass('animated');
+			$('#pokedexImage').addClass('tada');
+
+			$('.pokemon h3').addClass('animated');
+			$('.pokemon h3').addClass('bounceIn');
+
+			$('#name').addClass('animated');
+			$('#name').addClass('bounceInUp');
+			$('#number').addClass('animated');
+			$('#number').addClass('bounceInUp');
+			$('#type').addClass('animated');
+			$('#type').addClass('bounceInUp');
+			$('#move').addClass('animated');
+			$('#move').addClass('bounceInUp');
+
+			setTimeout(function(){
+				$('#pokedexImage').removeClass('animated');
+				$('#pokedexImage').removeClass('tada');
+			}, 3000);
 		}).done(function() { 
 			$('.error').hide();
-			$('.pokemon').show();
+			$('.pokemon').delay(800).fadeIn();
 			console.log('request successful'); 
 		}).fail(function() { 
 			console.log('request failed'); 
-			$('.pokemon').hide();
-			$('.error').show();
+			$('.pokemon').fadeOut();
+			$('.error').delay(1000).fadeIn(1000);
 		});
 	}
 
@@ -456,13 +476,26 @@ $(document).ready(function(){
 	$('#loading').hide();
 	$('.pokemon').hide();
 
-	$(document).ajaxStart(function(){
+	/*$('#searchPoke').click(function(){
 		$('#loading').show();
 		$('.pokemon').hide();
 		$('.error').hide();
+	});*/
+
+	$('#searchForm').bind('enterKey',function(e){
+		$('#loading').delay(500).fadeIn();
+		$('.pokemon').fadeOut();
+		$('.error').fadeOut();
+	});
+
+	$('#searchForm').keyup(function(e){
+		if(e.keyCode == 13)
+		{
+			$(this).trigger('enterKey');
+		}	
 	});
 
 	$(document).ajaxStop(function(){
-		$('#loading').hide();
+		$('#loading').fadeOut();
 	});
 });
