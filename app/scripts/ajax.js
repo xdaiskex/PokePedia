@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	//Set each variable to 0 so that the evolve button that corresponds with the variable disappears after 2 uses
 	var pokeId = 0;
 	var evolve1 = 0;
 	var evolve2 = 0;
@@ -103,6 +104,7 @@ $(document).ready(function(){
 		$('.water6').append('<img src=\'' + data.sprites.front_default + '\' alt=\'' + data.name + '\'>');
 	});
 
+	//Evolutions for each generation
 	function Evolve(id){
 		setTimeout(function(){
 			$('.grass img').css('filter', 'brightness(0) invert(1)');
@@ -337,43 +339,43 @@ $(document).ready(function(){
 		evolve6++;
 	}
 
+	//Pokedex functionality
 	function GetPokemon(pokemon){
 		$.getJSON('http://pokeapi.co/api/v2/pokemon/' + pokemon + '/', function(data){
-			console.log('Name: ' + data.name);
-			console.log('Id: ' + data.id);
 			pokeId = data.id;
 
+			//Clear all previous data
 			$('#name').empty();
 			$('#num').empty();
 			$('#type').empty();
 			$('#move').empty();
 			$('#pokedexImage').empty();
 
+			//Displays name, id, and image data
 			$('#name').html(Capitalize(data.name));
 			$('#number').html(data.id);
 			$('#pokedexImage').attr('src', data.sprites.front_default);
 			$('#pokedexImage').attr('alt', data.name);
 
+			//Displays type data
 			$.each(data.types, function(i, item){
-				console.log('Type ' + (i+1) + ': ' + data.types[i].type.name);
 				$('#type').append(Capitalize(data.types[i].type.name) + '<br>');
 			});
 
+			//Displays moves data
 			var j = 0;
 			$.each(data.moves, function(i, item){
 				if(data.moves[i].version_group_details[0].move_learn_method.name == 'level-up' && j < 4){
-					console.log('Move ' + (i+1) + ': ' + data.moves[i].move.name);
 					$('#move').append(Capitalize(data.moves[i].move.name) + '<br>');
 					j++;
 				}
 			});
 
+			//Adding animation to the data
 			$('#pokedexImage').addClass('animated');
 			$('#pokedexImage').addClass('tada');
-
 			$('.pokemon h3').addClass('animated');
 			$('.pokemon h3').addClass('bounceIn');
-
 			$('#name').addClass('animated');
 			$('#name').addClass('bounceInUp');
 			$('#number').addClass('animated');
@@ -383,40 +385,38 @@ $(document).ready(function(){
 			$('#move').addClass('animated');
 			$('#move').addClass('bounceInUp');
 
+			//Remove the animation classes after 3 seconds
 			setTimeout(function(){
 				$('#pokedexImage').removeClass('animated');
 				$('#pokedexImage').removeClass('tada');
 			}, 3000);
+		//If search was successful, hide the error message and fade the Pokemon in after 800 milliseconds
 		}).done(function() { 
 			$('.error').hide();
 			$('.pokemon').delay(800).fadeIn();
-			console.log('request successful'); 
+		//If search was unsuccessful, display the error message after 1 second
 		}).fail(function() { 
-			console.log('request failed'); 
 			$('.pokemon').fadeOut();
 			$('.error').delay(1000).fadeIn(1000);
 		});
 	}
 
+	//Capitalize the first letter of a pokemon's name
 	function Capitalize(string) {
 	    return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 
+	//On submission of the Pokedex search, run the GetPokemon function
 	$('#pokemonForm').on('submit', function(event){
 		event.preventDefault();
 		var pokemon = $(this).serialize();;
 		GetPokemon(pokemon.substr(6));
 	});
 
-	//Random
-	/*$('#evolve').click(function(){
-		GetPokemon(pokeId + 1);
-	});*/
-
+	//Evolve buttons
 	$('#evolve1').click(function(){
 		var id = parseInt($('#bulbasaur h3').attr('class'));
 		$('#bulbasaur h3').attr('class', id + 1) ;
-		console.log(id);
 		Evolve(id + 1);
 		if(evolve1 == 2){
 			$('#evolve1').remove();
@@ -426,7 +426,6 @@ $(document).ready(function(){
 	$('#evolve2').click(function(){
 		var id = parseInt($('#chikorita h3').attr('class'));
 		$('#chikorita h3').attr('class', id + 1) ;
-		console.log(id);
 		Evolve2(id + 1);
 		if(evolve2 == 2){
 			$('#evolve2').remove();
@@ -436,7 +435,6 @@ $(document).ready(function(){
 	$('#evolve3').click(function(){
 		var id = parseInt($('#treecko h3').attr('class'));
 		$('#treecko h3').attr('class', id + 1) ;
-		console.log(id);
 		Evolve3(id + 1);
 		if(evolve3 == 2){
 			$('#evolve3').remove();
@@ -446,7 +444,6 @@ $(document).ready(function(){
 	$('#evolve4').click(function(){
 		var id = parseInt($('#turtwig h3').attr('class'));
 		$('#turtwig h3').attr('class', id + 1) ;
-		console.log(id);
 		Evolve4(id + 1);
 		if(evolve4 == 2){
 			$('#evolve4').remove();
@@ -456,7 +453,6 @@ $(document).ready(function(){
 	$('#evolve5').click(function(){
 		var id = parseInt($('#snivy h3').attr('class'));
 		$('#snivy h3').attr('class', id + 1) ;
-		console.log(id);
 		Evolve5(id + 1);
 		if(evolve5 == 2){
 			$('#evolve5').remove();
@@ -466,22 +462,13 @@ $(document).ready(function(){
 	$('#evolve6').click(function(){
 		var id = parseInt($('#chespin h3').attr('class'));
 		$('#chespin h3').attr('class', id + 1) ;
-		console.log(id);
 		Evolve6(id + 1);
 		if(evolve6 == 2){
 			$('#evolve6').remove();
 		}
 	});
 
-	$('#loading').hide();
-	$('.pokemon').hide();
-
-	/*$('#searchPoke').click(function(){
-		$('#loading').show();
-		$('.pokemon').hide();
-		$('.error').hide();
-	});*/
-
+	//Show loading icon when searching for a pokemon
 	$('#searchForm').bind('enterKey',function(e){
 		$('#loading').delay(500).fadeIn();
 		$('.pokemon').fadeOut();
@@ -495,6 +482,7 @@ $(document).ready(function(){
 		}	
 	});
 
+	//Fade out loading icon when ajax is done
 	$(document).ajaxStop(function(){
 		$('#loading').fadeOut();
 	});

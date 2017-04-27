@@ -1,9 +1,4 @@
 @font-face {
-    font-family: pokemon;
-    src: url(../fonts/pokemon.ttf);
-}
-
-@font-face {
     font-family: marker;
     src: url(../fonts/marker.ttf);
 }
@@ -160,21 +155,6 @@ p{
     margin: auto;
 }
 
-/*.evolveBtn{
-    background-color: white;
-    color: black;
-    margin-top: 25px;
-    font-size: 25px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: 2px solid black;
-}
-
-.evolveBtn:hover{
-    background-color: black;
-    color: white;
-}*/
-
 .evolveBtn {
     background: none;
     border: 3px solid black;
@@ -319,11 +299,6 @@ button::after {
     margin-bottom: 10px;
 }
 
-#pokedexImage {
-    /*-webkit-animation-delay: .3s;
-    animation-delay: .3s;*/
-}
-
 .pokemon h3 {
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
@@ -357,6 +332,10 @@ button::after {
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 100px;
+}
+
+#loading, .pokemon{
+    display: none;
 }
 
 @media only screen and (max-width: 770px){

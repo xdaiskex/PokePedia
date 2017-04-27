@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	//Full page initialization 
 	$('#fullpage').fullpage({
 		menu: '#menu',
 		keyboardScrolling: true,
@@ -6,21 +7,26 @@ $(document).ready(function() {
 		anchors:['first', 'about', 'second', 'third']
 	});
 
+	//Redirect to the first section on page load
 	location.replace('#first');
 
+	//Disable scrolling on load
 	$.fn.fullpage.setAllowScrolling(false);
 
+	//Add a glow effect when focusing on the Pokedex search bar
 	$('#searchForm').focus(function(){
 		$('#searchForm').css('box-shadow', '0 0 20px rgba(81, 203, 238, 1');
     	$('#searchForm').css('border', '1px solid rgba(81, 203, 238, 1');
     	$('#searchForm').css('transition', '.5s');
 	});
+
 	$('#searchForm').blur(function(){
 		$('#searchForm').css('box-shadow', 'none');
     	$('#searchForm').css('border', '1px solid gray');
     	$('#searchForm').css('transition', '.5s');
 	});
 
+	//Pokeball wobble and sound effect on hover
 	$('#pokeball').hover(function(){
 		$(this).css('filter', 'brightness(.5)');
 		$(this).css('transition', '.5s');
@@ -37,6 +43,7 @@ $(document).ready(function() {
 		wobble.currentTime = 0;
     });
 
+	//When the Pokeball is clicked, fade to white, then fade to the main page and play the theme song
     $('#pokeball').click(function(){
 		$('.first').css('opacity', '0');
 		$('.first').css('transition', '1s');
@@ -70,7 +77,8 @@ $(document).ready(function() {
 			$.fn.fullpage.setAllowScrolling(true);
 	    }, 3400);
 	});
-
+	
+	//Evolution black magic
 	$('#evolve1').click(function(){
 		$.fn.fullpage.setAllowScrolling(false);
 		var click = document.getElementById('click');
@@ -604,96 +612,6 @@ $(document).ready(function() {
 
 	    setTimeout(function(){
 	    	$('.element6').hide();
-	    	$('.evolveBtn').fadeIn(1000);
-	    	$('h2').css('opacity', '1');
-	    	$('h3').css('opacity', '1');
-	    	$.fn.fullpage.setAllowScrolling(true);
-	    }, 21000);
-	});
-
-	$('#evolve7').click(function(){
-		$.fn.fullpage.setAllowScrolling(false);
-		var click = document.getElementById('click');
-		click.play();
-		var background = document.getElementById('backgroundMusic');
-		$('#backgroundMusic').animate({volume: 0}, 1500);
-		$('.element7').css('color', 'black');
-		$('.element7').css('transition', '2s');
-		$('h2').css('opacity', '0');
-		$('h2').css('transition', '2s');
-		$('h3').css('opacity', '0');
-		$('h3').css('transition', '2s');
-		$('.second').css('background-color', 'black');
-		$('.second').css('transition', '2s');
-		$('.evolveBtn').fadeOut(1000);
-
-		setTimeout(function(){
-			$('.element7').show();
-			$('.element7').css('color', 'white');
-			$('.element7').css('transition', '2s');
-			$(function(){
-				$('.element7').typed({
-					strings: ['What? Everyone is evolving!'],
-					typeSpeed: 20
-				});
-			});
-		}, 1000);
-		
-		setTimeout(function(){
-			var evolve = document.getElementById('evolveMusic');
-			evolve.play();
-		}, 3000);
-		
-		setTimeout(function(){
-			$('.second').css('opacity', '0');
-			$('.second').css('transition', '1s');
-	    }, 10000);
-
-	    setTimeout(function(){
-	    	$('.grass7 img').css('filter', 'brightness(1) invert(0)');
-	    	$('.grass7 img').css('transition', '3s');
-	    	$('.fire7 img').css('filter', 'brightness(1) invert(0)');
-	    	$('.fire7 img').css('transition', '3s');
-	    	$('.water7 img').css('filter', 'brightness(1) invert(0)');
-	    	$('.water7 img').css('transition', '3s');
-			$('.second').css('opacity', '1');
-			$('.second').css('transition', '2s');
-	    }, 12000);
-
-	    setTimeout(function(){
-	    	$('.grass7 img').css('filter', 'drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black)');
-	    	$('.fire7 img').css('filter', 'drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black)');
-	    	$('.water7 img').css('filter', 'drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black)');
-			$('.grass7 img').addClass('animated');
-			$('.grass7 img').addClass('tada');
-			$('.fire7 img').addClass('animated');
-			$('.fire7 img').addClass('tada');
-			$('.water7 img').addClass('animated');
-			$('.water7 img').addClass('tada');
-	    }, 14500);
-
-	    setTimeout(function(){
-	    	$(function(){
-				$('.element7').typed({
-					strings: ['Congratulations! Everyone evolved!'],
-					typeSpeed: 20
-				});
-			});
-	    }, 16000);
-
-	    setTimeout(function(){
-	    	$('.second').css('background-color', 'white');
-	    	$('.grass7 img').removeClass('animated');
-			$('.grass7 img').removeClass('tada');
-			$('.fire7 img').removeClass('animated');
-			$('.fire7 img').removeClass('tada');
-			$('.water7 img').removeClass('animated');
-			$('.water7 img').removeClass('tada');
-			$('#backgroundMusic').animate({volume: .2}, 1000);
-	    }, 20000);
-
-	    setTimeout(function(){
-	    	$('.element7').hide();
 	    	$('.evolveBtn').fadeIn(1000);
 	    	$('h2').css('opacity', '1');
 	    	$('h3').css('opacity', '1');
